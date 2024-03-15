@@ -1,0 +1,15 @@
+
+
+{% if latest_agenda_list %}
+
+    <ul>
+    {% for agenda in latest_agenda_list %}
+
+        <li><a href="{% url 'detail' agenda.id %}">{{ agenda.name }}</a></li>
+        <li><a href="{% url 'polls:detail' agenda.id %}">{{ agenda.id }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
